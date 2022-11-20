@@ -5,7 +5,7 @@ for i in range(size):
 
 strr = list(set(strr))
 strr.sort()
-strr.sort(key = len)
+strr.sort(key = lambda x: len(x))
 
 for i in strr:
     print(i)
