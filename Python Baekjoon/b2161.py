@@ -7,7 +7,7 @@ for i in range(1, nums+1):
 
 while (len(card) != 0):
     ans.append(card.pop(0))
-    if(len(card) > 1):
+    if(len(card) != 0):
         card.append(card.pop(0))
 
 for j in ans:
