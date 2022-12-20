@@ -9,7 +9,7 @@ while (1):
     if (candidate[0] == max(candidate) and candidate.count(max(candidate)) == 1):
         break
 
-    i = candidate.index(max(candidate), 1, n)
+    i = candidate.index(max(candidate))
     candidate[i] -= 1
     candidate[0] += 1
     count += 1
