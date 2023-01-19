@@ -1,11 +1,10 @@
 n, k = map(int, input().split())
 nums = [i for i in range(1, n+1)]
 index = k - 1
-
-print("<", end = "")
+answer = []
 
 for i in range(n):
-    print(nums[index], end='')
+    answer.append(nums[index])
     nums.remove(nums[index])
 
     index += k - 1
@@ -15,7 +14,4 @@ for i in range(n):
         if len(nums) == 0:
             break
 
-    if not len(nums) == 0:
-        print(', ', end="")
-
-print(">")
+print("<" + ', '.join(map(str, answer)) + ">")
