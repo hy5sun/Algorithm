@@ -1,17 +1,15 @@
+# deque 사용
+from collections import deque
+
 n, k = map(int, input().split())
-nums = [i for i in range(1, n+1)]
-index = k - 1
+nums = deque(i for i in range(1, n+1))
 answer = []
 
-for i in range(n):
-    answer.append(nums[index])
-    nums.remove(nums[index])
+while nums:
+    for i in range(k-1):
+        nums.append(nums.popleft())
+    answer.append(nums.popleft())
 
-    index += k - 1
 
-    while not index < len(nums):
-        index -= len(nums)
-        if len(nums) == 0:
-            break
-
+# 1 2 4 5 6 7
 print("<" + ', '.join(map(str, answer)) + ">")
