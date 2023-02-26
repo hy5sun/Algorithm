@@ -1,15 +1,24 @@
 # 그리디 알고리즘 (해결X)
 n = int(input())
 time = []
+meetingTime = []
 count = 0
 
 for i in range(n):
-    time.append(list(map(int, input().split())))
+    start, end = map(int, input().split())
+    time.append([start, end, end - start])
 
+time.sort()
+time.sort(key=lambda time: time[2])
 
-# for i in range(n-1):
-#     if time[i][1] < time[i+1][0]:
-#         count += 1
+for i in range(n):
+    a = [x for x in range(time[i][0], time[i][1])]
+    for j in a:
+        if j in meetingTime:
+            break
+    meetingTime.append(q for q in a)
+    count += 1
 
-# print(count)
+print(count)
 
+# [3, 5], [5, 7], [12, 14], [1, 4], [8, 11]
