@@ -1,23 +1,17 @@
 import itertools
-numbers="011"
+numbers = input()
 answer = 0
-num = []
+num = set()
 
 for i in range(1, len(numbers) +1):
-    num += set(itertools.permutations(list(numbers), i))
+    num |= set(map(int, map("".join, itertools.permutations(list(numbers), i))))
 
-print(num)
+num -= set(range(2))
 
 for n in num:
-    if n[0] == '0':
-        del n
-        continue
-    number = int(''.join(n))
     prime = True
-    if number == 1:
-        prime = False
-    for i in range(2, number):
-        if number % i == 0:
+    for i in range(2, n):
+        if n % i == 0:
             prime = False
             break
     if prime:
