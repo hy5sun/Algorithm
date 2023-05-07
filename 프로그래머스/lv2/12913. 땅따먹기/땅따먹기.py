@@ -1,8 +1,13 @@
-def solution(land):
-    for i in range(1, len(land)):
-        land[i][0] += max(land[i-1][1], land[i-1][2], land[i-1][3])
-        land[i][1] += max(land[i-1][0], land[i-1][2], land[i-1][3])
-        land[i][2] += max(land[i-1][0], land[i-1][1], land[i-1][3])
-        land[i][3] += max(land[i-1][0], land[i-1][1], land[i-1][2])
-
+def solution(land): 
+    answer = 0 
+    for i in range(len(land) -1):
+        max_num = max(land[i]) 
+        idx = land[i].index(max(land[i])) 
+        land[i].pop(idx)
+        num = max(land[i])  
+        for k in range(4):
+            if k == idx: 
+                land[i+1][k] += num  
+            else: 
+                land[i+1][k] += max_num 
     return max(land[-1])
