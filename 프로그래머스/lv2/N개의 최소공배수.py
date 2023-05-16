@@ -1,5 +1,4 @@
 import math
-
 def solution(arr):
     for num in range(max(arr), math.prod(arr)+1):
         ps=True
