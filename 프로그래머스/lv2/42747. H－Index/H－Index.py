@@ -5,7 +5,7 @@ def solution(citations):
         for c in citations:
             if c >= h:
                 count += 1
-        if count >= h:
+        if count == h:
             answer = max(answer, h)
     return answer
 
