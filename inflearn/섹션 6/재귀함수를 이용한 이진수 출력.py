@@ -1,13 +1,9 @@
-def two(n):
-    if n // 2 == 1:
-        answer.append(n%2)
-        answer.append(n//2)
-        print(''.join(str(a) for a in answer[::-1]))
+def to_binary(n):
+    if n == 0:
+        return
     else:
-        answer.append(n % 2)
-        n //= 2
-        two(n)
+        to_binary(n // 2)
+        print(n % 2, end='')
 
 n = int(input())
-answer = []
-two(n)
+to_binary(n)
