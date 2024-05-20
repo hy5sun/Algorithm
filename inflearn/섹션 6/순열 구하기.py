@@ -1,8 +1,5 @@
 def DFS(i):
     global cnt
-    global answer
-    if i > m:
-        return
     if i == m:
         for a in answer:
             print(a, end=' ')
